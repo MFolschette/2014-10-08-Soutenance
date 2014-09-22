@@ -1,0 +1,15 @@
+*.aux
+*.toc
+*.backup
+*.kate-swp
+*.log
+*.bak
+*.blg
+*.bbl
+*.out
+2014-10-08-Soutenance.pdf
+*~
+*.pag
+*.kilepr
+*.nav
+*.snm

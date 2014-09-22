@@ -1,0 +1,51 @@
+% Analyse statique avec priorités
+
+\begin{frame}[c]
+  \frametitle{Static analysis with prioritised actions}
+  \framesubtitle{\tcite{\cfpmrcsbio}}
+
+\tval{Sufficient condition:}
+
+\begin{itemize}
+  \item no cycle
+  \item each objective has a solution
+  \item \only<-4>{coherent edges}\only<5->{\sout{coherent edges}}
+\end{itemize}
+\vspace{1cm}
+\hspace{2cm}\uncover<5->{\textcolor{darkyellow}{\textbf{Inconclusive}}}
+\vspace{-3cm}
+
+\begin{center}\scalebox{\scaleex}{
+\begin{tikzpicture}[aS]
+  \priostatic
+
+  \path<2-5> (ab11) edge[aSPrio,Aexedge] (ab11s);
+  \path<5-> (ab11) edge[aSPrio,Ahledge] (ab11s);
+
+  \node<3>[Aproc,Aex,at=(a1)] {$a_1$};
+  \node<3>[Aproc,Aex,at=(b1)] {$b_1$};
+  \node<4->[Aproc,Ahl,at=(a1)] {$a_1$};
+  \node<4->[Aproc,Ahl,at=(a0)] {$a_0$};
+  %\node<2>[Aproc,Ahl,at=(b0)] {$b_0$};
+  %\node<2>[Aproc,Ahl,at=(b1)] {$b_1$};
+\end{tikzpicture}
+}\end{center}
+
+\scalebox{\scaleminiex}{
+\begin{tikzpicture}
+  \path[use as bounding box] (-0.5,-0.5) rectangle (8.5,3.5);
+  \tikzstyle{current process}=[process,fill=gray]
+  \exphcoopprio{prio}{}
+  \node[process,very thick] at (z_1.center) {?};
+  \TState{1-}{a_0, b_0, ab_0, z_0}
+\end{tikzpicture}}
+\hfill
+\scalebox{\scaleex}{
+\scalebox{\scaleex}{
+\begin{tikzpicture}[aS]
+  \path[use as bounding box] (0,0) rectangle (5.8,4);
+  \glclegend{prio}{$z_1$}{$\PHobj{z_0}{z_1}$}
+\end{tikzpicture}
+}}
+
+\end{frame}

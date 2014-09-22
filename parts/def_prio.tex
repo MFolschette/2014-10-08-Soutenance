@@ -1,0 +1,55 @@
+% Définition des priorités
+
+\begin{frame}[c]
+  \frametitle{Introduction of Classes of Priorities}
+  \framesubtitle{\tcite{\cfpmrcsbio}}
+
+\begin{itemize}
+  \item Each action is associated to a class of priority.
+  \item An action cannot be played if another action of higher priority is playable.
+\end{itemize}
+
+\medskip
+
+\begin{center}
+\begin{tabular}{ccccc}
+  \tikz \node[labelprio1] {$1$}; &
+  \tikz \node[labelprio2] {$2$}; &
+  \tikz \node[labelprio3] {$3$}; &
+  \vspace*{.5em}\hspace*{.3cm}\ldots\hspace*{.3cm} &
+    \tikz \node[labelprio, fill=gray!40] {$n$}; \\\hline
+  \parbox{1cm}{\vspace*{.5em}highest priority} &
+  \parbox{1cm}{~} & \parbox{1cm}{~} &&
+  \parbox{1cm}{\vspace*{.5em}lowest priority}
+\end{tabular}
+\hspace*{-1em}
+\raisebox{2.2pt}{$\blacktriangleright$}
+
+\bigskip
+\bigskip
+
+\pause
+
+\begin{tikzpicture}
+  \path[use as bounding box] (-0.5,-0.5) rectangle (2.5,1.5);
+  \TSort{(0,0)}{a}{2}{l}
+  \TSort{(2,0)}{b}{2}{r}
+  \THit{a_0}{}{b_0}{.west}{b_1}
+  \THit{a_0}{out=-120,in=180,selfhit}{a_0}{.west}{a_1}
+  \path[bounce]
+  \TBounce{a_0}{bend left}{a_1}{.south}
+  \TBounce{b_0}{bend left}{b_1}{.south}
+  ;
+  \TState{-2}{a_0,b_0}
+  \TState{3-}{a_1,b_0}
+
+  \node[labelprio1] at (-1.5,-0.5) {$1$};
+  \node[labelprio2] at (1,0.25) {$2$};
+\end{tikzpicture}
+
+\bigskip
+
+\f $b_1$ \tval{cannot be reached}
+\end{center}
+
+\end{frame}
