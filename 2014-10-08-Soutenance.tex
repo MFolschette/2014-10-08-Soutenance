@@ -48,8 +48,14 @@
 
 
 
-\colorlet{couleurtheme}{gray}  % Couleur principale du thème
+% \colorlet{couleurtheme}{gray}  % Couleur principale du thème
+% \colorlet{couleurcit}{gray}  % Couleur des citations
+% \colorlet{couleurex}{blue}  % Couleur des citations
+% \colorlet{couleurliens}{darkblue}  % Couleur des citations
+
+\colorlet{couleurtheme}{cyan}  % Couleur principale du thème
 \colorlet{couleurcit}{gray}  % Couleur des citations
+\colorlet{couleurmescit}{violet}  % Couleur des citations
 \colorlet{couleurex}{blue}  % Couleur des citations
 \colorlet{couleurliens}{darkblue}  % Couleur des citations
 
@@ -100,10 +106,15 @@
 
 \newcommand{\console}[1]{\textcolor{darkgray}{#1}}
 
+\newcommand{\emphcolor}[1]{\textcolor{couleurex}{#1}}
+
 % Style des citations
 \newcommand{\tscite}[1]{\textcolor{couleurcit}{#1}}
 \newcommand{\tcite}[1]{\textcolor{couleurcit}{[#1]}}
 \newcommand{\tcitebullet}{~~$\textcolor{couleurtheme}{\bullet}$~}
+
+\newcommand{\vol}{Vol.\ }
+\newcommand{\no}{No.\ }
 
 
 
@@ -288,15 +299,11 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 
 \input{parts/def_ph.tex}
 \input{parts/sc_temposhift.tex}
-%%%%%%\input{parts/ccl_ph.tex}
 
 \input{parts/metazoan.tex}
 
-%%%%%% \input{parts/static.tex}
-
 \input{parts/def_stocha.tex}
 \input{parts/metazoan_stocha.tex}
-\input{parts/ccl_stocha.tex}
 
 \input{parts/plan.tex}
 
@@ -314,21 +321,17 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 \input{parts/prio_static.tex}
 \input{parts/metazoan_canonique.tex}
 
-
-
-% \input{parts/ccl_prio.tex}
-% 
-% \input{parts/ccl_an.tex}
+\input{parts/trad.tex}
 
 \input{parts/ccl.tex}
 
 \appendix
-\newcounter{finalframe}
-\setcounter{finalframe}{\value{framenumber}}
+% % % \newcounter{finalframe}
+% % % \setcounter{finalframe}{\value{framenumber}}
 
 \section[x]{Bibliography}
 \input{parts/biblio.tex}
 
-\setcounter{framenumber}{\value{finalframe}}
+% % % \setcounter{framenumber}{\value{finalframe}}
 
 \end{document}

@@ -49,3 +49,48 @@
 }}
 
 \end{frame}
+
+
+
+\begin{frame}[c]
+  \frametitle{Implémentation}
+
+Complexity:
+
+\begin{itemize}
+  \item Building the graph:
+  \begin{itemize}
+    \item Polynomial in the number of sorts
+    \item Exponential in the number of processes in each sort
+  \end{itemize}
+  \item Analysing the graph:
+  \begin{itemize}
+    \item Polynomial in the size of the graph
+  \end{itemize}
+\end{itemize}
+
+\pause
+\bigskip
+\small
+\begin{tabular}{r||c|c|c|c||c|c|c|}
+\hline
+\tval{Model} & Sorts & Procs & Actions & States & libddd$^1$ & GINsim$^2$ & \Pint \\\hline
+\tval{\ex{egfr20}} & 35 & 196 & 670 & $2^{64}$ & & $<$1s & \tval{0.35s} \\\hline
+\tval{\ex{tcrsig40}} & 54 & 156 & 301 & $2^{73}$ & & $\infty$ & \tval{0.2s} \\\hline
+\tval{\ex{tcrsig94}} & 133 & 448 & 1124 & $2^{194}$ & [13min -- $\infty$] & & \tval{0.8s} \\\hline
+%\tval{\ex{egfr104}} & 193 & 748 &  2356 & $2^{320}$ &  $\infty$ & $\infty$ & \tval{0.050s}\\\hline
+\end{tabular}
+
+\medskip
+\quad$^1$ LIP6/Move\\
+\quad$^2$ TAGC/IGC
+
+%S = Sorts \quad CS = Cooperative sorts \quad P = Processes \quad A = Actions
+
+%\cmodels
+\bigskip
+\todo{Citer les papiers d'origine}
+% \citeegfra\\
+% \citetcrsiga\\
+% \citetcrsigb\\
+\end{frame}
