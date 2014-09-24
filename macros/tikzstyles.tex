@@ -74,13 +74,14 @@
 \tikzstyle{unprio}=[draw,thin]%[double]
 %\tikzstyle{prio}=[draw,thick,-stealth]%[double]
 %\tikzstyle{prio}=[draw,-stealth,double]
-\tikzstyle{prio}=[draw,very thick,-stealth]
+\tikzstyle{prio}=[draw,thick,-stealth]
 \tikzstyle{coopupdate}=[-stealth,decorate,decoration={zigzag,amplitude=1.5pt,post=lineto,post length=.3cm,pre=lineto,pre length=.3cm}]
 \tikzstyle{superprio}=[draw,very thick,double,-stealth]
 \tikzstyle{labelprio}=[circle, fill=blue!30, inner sep=1pt]
 \tikzstyle{labelprio1}=[labelprio]
 \tikzstyle{labelprio2}=[labelprio, fill=red!60]
 \tikzstyle{labelprio3}=[labelprio, fill=orange!50]
+\tikzstyle{labelstocha}=[rectangle, rounded corners=2pt, minimum size=1.2em]
 
 \tikzstyle{dotne}=[circle, fill=black, inner sep=1.2pt, draw=transparent]
 \tikzstyle{linene}=[thick]
@@ -111,7 +112,7 @@
 
 
 
-\tikzstyle{grn}=[every node/.style={circle,draw=black,outer sep=2pt,minimum
+\tikzstyle{adn}=[every node/.style={circle,draw=black,outer sep=2pt,minimum
                 size=15pt,text=black}, node distance=1.5cm, ->]
 \tikzstyle{inh}=[>=|,-|,draw=colorinh,thick, text=black,label]
 \tikzstyle{act}=[->,>=triangle 60,draw=coloract,thick,color=coloract]
@@ -138,3 +139,9 @@ minimum size=10pt, outer sep=0, font=\scriptsize, draw=none]
 %\tikzstyle{shorthandoff}=[]
 %\tikzstyle{shorthandon}=[]
 \tikzstyle{objective}=[process,very thick,fill=yellow!50]
+
+\tikzstyle{andot}=[circle, fill=black, inner sep=1.2pt, draw=transparent]
+\tikzstyle{anligne}=[thick]
+
+\tikzstyle{apdot}=[andot] %[circle, fill=black, draw=black, inner sep=1]
+\tikzstyle{apdotsimple}=[] %[circle, fill=black, draw=black, inner sep=1]

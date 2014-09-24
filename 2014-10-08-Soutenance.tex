@@ -119,10 +119,11 @@
 
 
 
-\newcommand{\thedate}{2014/06/03}
+\newcommand{\thedate}{2014/10/08}
 \date{\thedate}
-\conference{BioTempo}{Réunion finale BioTempo}
-\title[Introducing time into PH with priorities]{Introducing time parameters into Process Hitting with classes of priorities}
+\conference{Soutenance de thèse}{Soutenance de thèse de doctorat}
+\title[Modélisation algébrique de la dynamique multi-échelles des RRB]%
+  {Modélisation algébrique de la dynamique multi-échelles\\des réseaux de régulation biologique}
 \author{Maxime FOLSCHETTE}
 
 
@@ -217,14 +218,35 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 
 \texttt{maxime.folschette@irccyn.ec-nantes.fr}
 
-\url{http://www.irccyn.ec-nantes.fr/~folschet/}
-
-\bigskip
-Joint work with:
-\\
-\normalsize
-Loïc PAULEVÉ, Morgan MAGNIN, Olivier ROUX
+\url{http://maxime.folschette.name/}
 \end{center}
+
+\scriptsize
+\bigskip
+%Jury de thèse :
+%\\
+
+%\president{Mme}{Prénom}{Nom}{Titre}{Établissement}
+%\guest{Mme}{Prénom}{Nom}{Titre}{Établissement}
+
+\begin{tabular}{r@{\ \ }l}
+\textbf{Rapporteurs :}
+& Jean-Paul COMET, Professeur des universités,
+    Université de Nice -- Sophia Antipolis \\
+& Anne SIEGEL, Directrice de recherche CNRS,
+    IRISA (CNRS \& Université Rennes 1), Inria Rennes \vspace*{1em} \\
+\textbf{Examinateurs :}
+& Mireille RÉGNIER, Directrice de recherche Inria,
+    École Polytechnique \& Université Paris-Sud 11 \\
+& Denis THIEFFRY, Professeur des universités,
+    École normale supérieure \vspace*{1em} \\
+\textbf{Directeur de thèse :}
+& Olivier ROUX, Professeur des universités,
+    École centrale de Nantes \\
+\textbf{Co-encadrant de thèse :}
+& Morgan MAGNIN, Maître de conférences,
+    École centrale de Nantes
+\end{tabular}
 
 \end{frame}
 
@@ -261,42 +283,43 @@ Loïc PAULEVÉ, Morgan MAGNIN, Olivier ROUX
 \section{Introduction}
 \input{parts/intro.tex}
 
-\section{The Process Hitting framework}
-\subsection{Definition}
-\input{parts/def_ph.tex}
-\subsection{Static Analysis}
-\input{parts/annex_static.tex}
-\subsection[x]{Summary}
-\input{parts/ccl_ph.tex}
+\input{parts/def_gi.tex}
+\input{parts/def_thomas.tex}
 
-\section{The Metazoan Segmentation Model}
+\input{parts/def_ph.tex}
+\input{parts/sc_temposhift.tex}
+%%%%%%\input{parts/ccl_ph.tex}
+
 \input{parts/metazoan.tex}
 
-\section{Stochastic Features}
-\subsection[x]{Stochastic Features in Process Hitting}
+%%%%%% \input{parts/static.tex}
+
 \input{parts/def_stocha.tex}
-\subsection{Adding Stochasticity to the Metazoan Segmentation}
 \input{parts/metazoan_stocha.tex}
-\subsection[x]{Summary}
 \input{parts/ccl_stocha.tex}
 
-\section{Priorities}
-\subsection[x]{Classes of Priorities in Process Hitting}
+\input{parts/plan.tex}
+
 \input{parts/def_prio.tex}
-\subsection{Adding Priorities to the Metazoan Segmentation}
 \input{parts/metazoan_prio.tex}
-\subsection[x]{Summary}
-\input{parts/ccl_prio.tex}
-
-\section{Neutralizing edges}
-\subsection[x]{Neutralizing Edges in Process Hitting}
+\input{parts/plan.tex}
 \input{parts/def_an.tex}
-\subsection{Adding Neutralizing Edges to the Metazoan Segmentation}
 \input{parts/metazoan_an.tex}
-\subsection[x]{Summary}
-\input{parts/ccl_an.tex}
+\input{parts/plan.tex}
+\input{parts/def_mult.tex}
+\input{parts/metazoan_mult.tex}
 
-\section{Summary \& Conclusion}
+\input{parts/plan.tex}
+\input{parts/sc_prio.tex}
+\input{parts/prio_static.tex}
+\input{parts/metazoan_canonique.tex}
+
+
+
+% \input{parts/ccl_prio.tex}
+% 
+% \input{parts/ccl_an.tex}
+
 \input{parts/ccl.tex}
 
 \appendix
@@ -305,27 +328,6 @@ Loïc PAULEVÉ, Morgan MAGNIN, Olivier ROUX
 
 \section[x]{Bibliography}
 \input{parts/biblio.tex}
-
-\section{Adding Priorities}
-\input{parts/prio_def.tex}
-
-\section{Static analysis with Priorities}
-\input{parts/prio_static.tex}
-
-
-
-%\input{parts/annex_fixpoint.tex}
-
-%\section{Translating a Process Hitting into a BRN}
-%\input{parts/inf.tex}
-%\subsection{Interaction Graph Inference}
-%\input{parts/inf_ig.tex}
-%\subsection{Parametrization Inference}
-%\input{parts/inf_param.tex}
-%\subsection{Implementation}
-%\input{parts/impl.tex}
-%\subsection{New inference}
-%\input{parts/new_inf.tex}
 
 \setcounter{framenumber}{\value{finalframe}}
 
