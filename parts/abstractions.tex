@@ -1,3 +1,5 @@
+% Abstractions
+
 \begin{frame}[c]
   \frametitle{Gene regulations}
 
@@ -29,8 +31,21 @@
   \frametitle{Discrétisation et asynchronisme}
 
 \begin{center}
-  \includegraphics[width=.8\textwidth]{figs/seuils.png}
+  \includegraphics[width=.8\textwidth]{figs/seuils1.png}
 \end{center}
+
+\begin{tikzpicture}[adn]
+  \path[use as bounding box] (-1.5,-5) rectangle (2.7,-5);
+  \node[inner sep=0] (a) at (0,0) {a};
+  \node[inner sep=0] (b) at (2,0) {b};
+  \path
+    node[elabel, below=-1em of a] {$\segm{0}{2}$}
+    node[elabel, below=-1em of b] {$\segm{0}{1}$};
+  \path
+    (a) edge[bend right=15] (b)
+    (b) edge[bend right=15] (a)
+    (a) edge[loop left] (a);
+\end{tikzpicture}
 
 \pause
 Concentrations ou niveaux d'activité continus

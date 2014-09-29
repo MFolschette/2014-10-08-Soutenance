@@ -53,11 +53,15 @@
 % \colorlet{couleurex}{blue}  % Couleur des citations
 % \colorlet{couleurliens}{darkblue}  % Couleur des citations
 
-\colorlet{couleurtheme}{cyan}  % Couleur principale du thème
+\definecolor{couleurtheme}{rgb}{0.4,0.4,.8}
+%\definecolor{couleurtheme}{rgb}{0,0.7,0.8}
+%\colorlet{couleurtheme}{darkcyan}  % Couleur principale du thème
 \colorlet{couleurcit}{gray}  % Couleur des citations
 \colorlet{couleurmescit}{violet}  % Couleur des citations
 \colorlet{couleurex}{blue}  % Couleur des citations
 \colorlet{couleurliens}{darkblue}  % Couleur des citations
+%\definecolor{couleurtitre}{rgb}{0.54,0.8,0.9}
+\colorlet{couleurtitre}{couleurtheme!50}  % Couleur des citations
 
 \usetheme{Pittsburgh}   % Thème général
 \usefonttheme{default}  % Thème de polices
@@ -196,7 +200,6 @@
 \colorlet{exanswer}{blue}
 \colorlet{colorgray}{lightgray}
 
-\definecolor{colortitle}{rgb}{0.54,0.8,0.9}
 
 
 \begin{document}
@@ -205,23 +208,25 @@
 
 % Cadre de titre
 \begin{center}
-\vspace{1cm}
-\setbeamercolor{postit}{fg=black,bg=colortitle}
-\begin{beamercolorbox}[sep=0.5em]{postit}
+%\vspace{.7cm}
+\vfill
+\textcolor{couleurtheme}{\fbox{\noindent%
+\setbeamercolor{postit}{fg=black,bg=couleurtitre}%
+\begin{beamercolorbox}[sep=1.5em]{postit}
 \centering
 \Large
 \textbf{%
 {\normalsize\theconference{}}\\~\\%
 \inserttitle
 }
-\end{beamercolorbox}
+\end{beamercolorbox}}}
 
 % Auteurs et instituts
 \par
 \medskip
 \bigskip
 \normalsize
-Maxime FOLSCHETTE
+\tval{Maxime FOLSCHETTE}
 
 \medskip
 \footnotesize
@@ -230,6 +235,11 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 \texttt{maxime.folschette@irccyn.ec-nantes.fr}
 
 \url{http://maxime.folschette.name/}
+
+\bigskip
+
+\normalsize
+Mercredi 8 octobre 2014
 \end{center}
 
 \scriptsize
@@ -258,6 +268,8 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 & Morgan MAGNIN, Maître de conférences,
     École centrale de Nantes
 \end{tabular}
+
+\vfill
 
 \end{frame}
 
@@ -294,36 +306,36 @@ MeForBio / IRCCyN / École Centrale de Nantes (Nantes, France)
 \section{Introduction}
 \input{parts/intro.tex}
 
-\input{parts/def_gi.tex}
+\input{parts/abstractions.tex}
 \input{parts/def_thomas.tex}
 
-\input{parts/def_ph.tex}
-\input{parts/sc_temposhift.tex}
-
-\input{parts/metazoan.tex}
-
-\input{parts/def_stocha.tex}
-\input{parts/metazoan_stocha.tex}
-
-\input{parts/plan.tex}
-
-\input{parts/def_prio.tex}
-\input{parts/metazoan_prio.tex}
-\input{parts/plan.tex}
-\input{parts/def_an.tex}
-\input{parts/metazoan_an.tex}
-\input{parts/plan.tex}
-\input{parts/def_mult.tex}
-\input{parts/metazoan_mult.tex}
-
-\input{parts/plan.tex}
-\input{parts/sc_prio.tex}
-\input{parts/prio_static.tex}
-\input{parts/metazoan_canonique.tex}
-
-\input{parts/trad.tex}
-
-\input{parts/ccl.tex}
+% \input{parts/def_ph.tex}
+% \input{parts/sc_temposhift.tex}
+% 
+% \input{parts/metazoan.tex}
+% 
+% \input{parts/def_stocha.tex}
+% \input{parts/metazoan_stocha.tex}
+% 
+% \input{parts/plan.tex}
+% 
+% \input{parts/def_prio.tex}
+% \input{parts/metazoan_prio.tex}
+% \input{parts/plan.tex}
+% \input{parts/def_an.tex}
+% \input{parts/metazoan_an.tex}
+% \input{parts/plan.tex}
+% \input{parts/def_mult.tex}
+% \input{parts/metazoan_mult.tex}
+% 
+% \input{parts/plan.tex}
+% \input{parts/sc_prio.tex}
+% \input{parts/prio_static.tex}
+% \input{parts/metazoan_canonique.tex}
+% 
+% \input{parts/trad.tex}
+% 
+% \input{parts/ccl.tex}
 
 \appendix
 % % % \newcounter{finalframe}
