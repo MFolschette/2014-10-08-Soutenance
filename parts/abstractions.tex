@@ -36,18 +36,24 @@
 
 \begin{tikzpicture}[adn]
   \path[use as bounding box] (-1.5,-5) rectangle (2.7,-5);
+  
   \node[inner sep=0] (a) at (0,0) {a};
   \node[inner sep=0] (b) at (2,0) {b};
-  \path
-    node[elabel, below=-1em of a] {$\segm{0}{2}$}
-    node[elabel, below=-1em of b] {$\segm{0}{1}$};
-  \path
-    (a) edge[bend right=15] (b)
-    (b) edge[bend right=15] (a)
-    (a) edge[loop left] (a);
+  
+  \path node[elabel, below=-1em of b] {$\segm{0}{1}$};
+  \path<2-> node[elabel, below=-1em of a] {$\segm{0}{2}$};
+  
+  \path<1> (b) edge[very thick,bend right=15] (a);
+  \path<2-> (b) edge[bend right=15] (a);
+  
+  \path<2-> (a) edge[very thick,bend right=15] (b)
+    (a) edge[very thick,loop left] (a);
+  
+  \path<1>[fill=white] (3.3,-4.2) rectangle (8,1);
 \end{tikzpicture}
 
-\pause
+\vspace*{-1em}
+\pause[3]
 Concentrations ou niveaux d'activité continus
 
 \quad \f Abstraction sous forme de niveaux discrets correspondant à des seuils

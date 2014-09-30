@@ -77,11 +77,19 @@
 \tikzstyle{prio}=[draw,thick,-stealth]
 \tikzstyle{coopupdate}=[-stealth,decorate,decoration={zigzag,amplitude=1.5pt,post=lineto,post length=.3cm,pre=lineto,pre length=.3cm}]
 \tikzstyle{superprio}=[draw,very thick,double,-stealth]
-\tikzstyle{labelprio}=[circle, fill=blue!30, inner sep=1pt]
-\tikzstyle{labelprio1}=[labelprio]
-\tikzstyle{labelprio2}=[labelprio, fill=red!60]
-\tikzstyle{labelprio3}=[labelprio, fill=orange!50]
 \tikzstyle{labelstocha}=[rectangle, rounded corners=2pt, minimum size=1.2em]
+
+% \tikzstyle{labelprio}=[circle, fill=blue!30, inner sep=1pt]
+% \tikzstyle{labelprio1}=[labelprio]
+% \tikzstyle{labelprio2}=[labelprio, fill=red!60]
+% \tikzstyle{labelprio3}=[labelprio, fill=orange!50]
+
+% Labels de secours
+\tikzstyle{labelprio}=[circle, fill=blue!15, draw=blue!60, thick, inner sep=1pt]
+\tikzstyle{labelprio1}=[labelprio]
+\tikzstyle{labelprio2}=[labelprio, fill=red!20, draw=red!80, thick]
+\tikzstyle{labelprio3}=[labelprio, fill=orange!20, draw=orange!70, thick]
+\tikzstyle{labelprion}=[labelprio, fill=gray!20, draw=gray!80, thick]
 
 \tikzstyle{dotne}=[circle, fill=black, inner sep=1.2pt, draw=transparent]
 \tikzstyle{linene}=[thick]
@@ -120,8 +128,9 @@
 \tikzstyle{actgray}=[->,>=triangle 60,draw=coloractgray,thick,color=coloractgray]
 \tikzstyle{inf}=[->,draw=colorinf,thick,color=colorinf]
 %\tikzstyle{elabel}=[fill=none, above=-1pt, sloped,text=black, minimum size=10pt, outer sep=0, font=\scriptsize,draw=none]
-\tikzstyle{elabel}=[fill=none,text=black, above=-2pt,%sloped,
+\tikzstyle{alabel}=[fill=none,text=black, %above=-2pt,%sloped,
 minimum size=10pt, outer sep=0, font=\scriptsize, draw=none]
+\tikzstyle{elabel}=[alabel, above=-2pt]
 %\tikzstyle{elabel}=[]
 
 

@@ -48,7 +48,7 @@
 
 
 \begin{frame}[t]
-  \frametitle{Adapting the expressivity of PH}
+  \frametitle{Décalage temporel des sortes coopératives}
   \framesubtitle{\tcite{\cfpmrcsbio}}
 
 \begin{center}\scalebox{\scaleex}{
@@ -111,7 +111,7 @@
 
 \medskip
 
-\tval{Drawback}: Cooperations are too “loose” to be as expressive as ADN.
+\tval{Inconvénient} : les coopérations sont trop «~lâches~» (décalage temporel)
 
 \medskip
 
@@ -127,9 +127,14 @@ $ \uncover<10->{\rightarrow\PHstate{a_0, b_1, ab_{10}, z_0}}
 \medskip
 
 \uncover<12->{
-The cooperativity should be: \qex{$a_1 \wedge b_1$~\tval{simultaneously}} \quad \textit{i.e.} “in the same state”
-
-\smallskip
-but the model behaves like: \qex{$\mathbf{P}(a_1) \wedge \mathbf{P}(b_1)$} \quad with $\mathbf{P}$ = “previously”
+\begin{tabular}{ll}
+  Comportement attendu : & \ex{$a_1 \wedge b_1$~\tval{simultanément}} \quad \cad «~dans le même état~»
+\\
+  Comportement obtenu : & \ex{$\mathbf{P}(a_1) \wedge \mathbf{P}(b_1)$} \quad avec $\mathbf{P}$ = «~précédemment~»
+\end{tabular}
+% Comportement attendu : \qex{$a_1 \wedge b_1$~\tval{simultanément}} \quad \cad «~dans le même état~»
+% 
+% \smallskip
+% Comportement obtenu : \qex{$\mathbf{P}(a_1) \wedge \mathbf{P}(b_1)$} \quad avec $\mathbf{P}$ = «~précédemment~»
 }
 \end{frame}

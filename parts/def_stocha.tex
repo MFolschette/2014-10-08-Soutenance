@@ -7,70 +7,72 @@
 \newcommand{\stochainf}{{\small $\infty$}}
 
 \begin{frame}[c]
-  \frametitle{Stochastic Features}
+  \frametitle{Paramètres stochastiques}
   \framesubtitle{\tcite{\cpmrtcsb}}
 
 \begin{itemize}
-  \item Introduces time features
-  \item Parameters: either $(r,sa)$, or the \tval{firing interval} $[d;D]$.
+  \item Introduction de propriétés temporelles
+  \item Paramètres stochastiques $(r,sa)$ équivalents à un \tval{intervalle de tir} $[d;D]$
 \end{itemize}
 
 \bigskip
 \begin{columns}
 \begin{column}{0.5\textwidth}
 
+\vspace*{-2em}
 \scalebox{0.9}{
 \begin{tikzpicture}[plot,xscale=0.35,yscale=1]
-\draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
-\draw[axe] (0,0) -- (0,1);
-\draw[ticks] (0,0) node[below] {$0$};
-\draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
-\draw[dashed] (0.10127,0) -- (0.10127,0.9) node[right] {$d$} (14.75552,0) --
-(14.75552,0.9) node[left] {$D$};
-\pgfplothandlerlineto
-\pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-1.table}
-\pgfusepath{stroke}
-\draw[interval] (0.10127,0) -- (14.75552,0);
+%  \path[draw,use as bounding box] (-.5,-.5) rectangle (16,.5);
+  \draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
+  \draw[axe] (0,0) -- (0,1);
+  \draw[ticks] (0,0) node[below] {$0$};
+  \draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
+  \draw[dashed] (0.10127,0) -- (0.10127,0.9) node[right] {$d$} (14.75552,0) --
+  (14.75552,0.9) node[left] {$D$};
+  \pgfplothandlerlineto
+  \pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-1.table}
+  \pgfusepath{stroke}
+  \draw[interval] (0.10127,0) -- (14.75552,0);
 \end{tikzpicture}
 }
 
 \scalebox{0.9}{
 \begin{tikzpicture}[plot,xscale=0.35,yscale=1]
-\draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
-\draw[axe] (0,0) -- (0,1);
-\draw[ticks] (0,0) node[below] {$0$};
-\draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
-\draw[dashed] (1.29879,0) -- (1.29879,0.9) node[right] {$d$} (8.19327,0) --
-(8.19327,0.9) node[left] {$D$};
-\pgfplothandlerlineto
-\pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-5.table}
-\pgfusepath{stroke}
-\draw[interval] (1.29879,0) -- (8.19327,0);
+  \draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
+  \draw[axe] (0,0) -- (0,1);
+  \draw[ticks] (0,0) node[below] {$0$};
+  \draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
+  \draw[dashed] (1.29879,0) -- (1.29879,0.9) node[right] {$d$} (8.19327,0) --
+  (8.19327,0.9) node[left] {$D$};
+  \pgfplothandlerlineto
+  \pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-5.table}
+  \pgfusepath{stroke}
+  \draw[interval] (1.29879,0) -- (8.19327,0);
 \end{tikzpicture}
 }
 
 \scalebox{0.9}{
 \begin{tikzpicture}[plot,xscale=0.35,yscale=1]
-\draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
-\draw[axe] (0,0) -- (0,1);
-\draw[ticks] (0,0) node[below] {$0$};
-\draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
-\draw[dashed] (2.96888,0) -- (2.96888,0.9) node[left] {$d$} (5.18245,0) --
-(5.18245,0.9) node[right] {$D$};
-\pgfplothandlerlineto
-\pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-50.table}
-\pgfusepath{stroke}
-\draw[interval] (2.96888,0) -- (5.18245,0);
+  \draw[axe] (0,0) -- (15.5,0) node[right] {$t$};
+  \draw[axe] (0,0) -- (0,1);
+  \draw[ticks] (0,0) node[below] {$0$};
+  \draw[mean] (4,0) -- (4,0.9) node[right]{$\frac{1}{r}$};
+  \draw[dashed] (2.96888,0) -- (2.96888,0.9) node[left] {$d$} (5.18245,0) --
+  (5.18245,0.9) node[right] {$D$};
+  \pgfplothandlerlineto
+  \pgfplotxyfile{plots/BioAtlanSTIC-0409/erlang-0.25-50.table}
+  \pgfusepath{stroke}
+  \draw[interval] (2.96888,0) -- (5.18245,0);
 \end{tikzpicture}
 }
 
-~~\textcolor{red!70}{\rule{17mm}{4.5pt}} ~ action duration
+~~\textcolor{red!70}{\rule{17mm}{4.5pt}} ~ Intervalle de tir
 
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
 
-\only<2->{
+\uncover<2->{
 \scalebox{0.9}{
 \begin{tikzpicture}
   \path[use as bounding box] (-1,-1) rectangle (2,1);
@@ -107,18 +109,22 @@
 }
 
 \noindent
-\f $b_1$ reached with a \tval{very low probability}.
+\f \tval{Probabilité très faible} d'atteindre $b_1$
 }
 
 \end{center}
 \end{column}
 \end{columns}
 
-% \pause[4]
-% \bigskip
+\pause
+\medskip
 % \begin{fleches}
 %   \item Tests by simulation
 %   \item Model-checking
 % \end{fleches}
+\begin{itemize}
+  \item Simulation \f non formel
+  \item \textit{Model-checking} \f forte complexité pour une précision acceptable
+\end{itemize}
 
 \end{frame}

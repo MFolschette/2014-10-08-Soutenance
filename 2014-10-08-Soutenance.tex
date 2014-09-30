@@ -1,6 +1,6 @@
 \documentclass[fleqn,8pt,t]{beamer}
 
-\usepackage[english]{babel}
+\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 %\usepackage{french} % Sommaire en début de document
@@ -32,6 +32,9 @@
 % Police
 \usepackage{lmodern}
 %\usepackage{libertine}
+% \usepackage{ziffer}     % Typographie française pour les nombres
+% \ZifferAus
+%\ZifferAn
 
 
 \input{macros/macros}
@@ -118,7 +121,8 @@
 \newcommand{\tcitebullet}{~~$\textcolor{couleurtheme}{\bullet}$~}
 
 \newcommand{\vol}{Vol.\ }
-\newcommand{\no}{No.\ }
+%\newcommand{\no}{No.\ }
+\newcommand{\cad}{c.-à-d.}
 
 
 
@@ -306,28 +310,29 @@ Mercredi 8 octobre 2014
 \section{Introduction}
 \input{parts/intro.tex}
 
-\input{parts/abstractions.tex}
-\input{parts/def_thomas.tex}
-
+\section{État de l'art de la modélisation}
+% \input{parts/abstractions.tex}
+% \input{parts/def_thomas.tex}
+% 
 % \input{parts/def_ph.tex}
 % \input{parts/sc_temposhift.tex}
 % 
+% \input{parts/def_stocha.tex}
+%%%%% \input{parts/metazoan_stocha.tex}
 % \input{parts/metazoan.tex}
 % 
-% \input{parts/def_stocha.tex}
-% \input{parts/metazoan_stocha.tex}
-% 
+\section{Enrichissement des Frappes de Processus}
 % \input{parts/plan.tex}
-% 
 % \input{parts/def_prio.tex}
 % \input{parts/metazoan_prio.tex}
 % \input{parts/plan.tex}
 % \input{parts/def_an.tex}
 % \input{parts/metazoan_an.tex}
 % \input{parts/plan.tex}
-% \input{parts/def_mult.tex}
-% \input{parts/metazoan_mult.tex}
+\input{parts/def_mult.tex}
+\input{parts/metazoan_mult.tex}
 % 
+\section{Frappes de Processus canoniques et analyse}
 % \input{parts/plan.tex}
 % \input{parts/sc_prio.tex}
 % \input{parts/prio_static.tex}

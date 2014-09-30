@@ -4,23 +4,28 @@
 \newcommand{\Eadn}{\mathbb{E}}
 \newcommand{\SGadn}{\mathrm{G}}
 
-\begin{frame}[c]
-  \frametitle{The Asynchronous Discrete Networks (ADN)}
+\begin{frame}[t]
+  \frametitle{Réseaux discrets / Modèle de Thomas}
   \framesubtitle{\todo{Citer DeJong}}
 
 \begin{itemize}
-  \item A set of components \qex{$N = \{ a, b, z \}$}
+  \item Un ensemble de composants \qex{$N = \{ a, b, z \}$}
 \uncover<2->{
-  \item A set of expression levels for each component \qex{$z \in \Fadn^z = \segm{0}{2}$}
-  \item The set of global states \qex{$\Fadn = \Fadn^a \times \Fadn^b \times \Fadn^z$}
+  \item Un ensemble de niveaux d'expression pour chaque composant \qex{$z \in \Fadn^z = \segm{0}{2}$}
+  \item L'ensemble des états globaux \qex{$\Fadn = \Fadn^a \times \Fadn^b \times \Fadn^z$}
 }
 \uncover<3->{
-  \item An evolution function for each component \qex{$f^z : \Fadn \rightarrow \Fadn^z$}
+  \item Une fonction d'évolution pour chaque composant \qex{$f^z : \Fadn \rightarrow \Fadn^z$}
+}
+\uncover<4->{
+  \item Signes et seuils sur les arcs \qex{$a \xrightarrow{+1}z$}
 \end{itemize}
+}
 
+\uncover<3->{
 \begin{center}
 \begin{tabular}{ccc}
-  \ex{$f^a = \neg b$} & \ex{$f^b = b \vee \neg a$} & \ex{$f^z = a + b$} \vspace{.5em}\\
+%  \ex{$f^a = \neg b$} & \ex{$f^b = b \vee \neg a$} & \ex{$f^z = a + b$} \vspace{.5em}\\
   \begin{tabular}[t]{c|c}
     $b$ & $f^a(b)$ \\
   \hline
@@ -56,25 +61,33 @@
   \node[inner sep=0] (a) at (0,1.5) {a};
   \node[inner sep=0] (b) at (0,0) {b};
   \path<2->
-    node[elabel, above=-1em of a] {$\segm{0}{1}$}
-    node[elabel, below=-1em of b] {$\segm{0}{1}$}
-    node[elabel, below=-1em of z] {$\segm{0}{2}$};
+    node[alabel, above=-1em of a] {$\segm{0}{1}$}
+    node[alabel, below=-1em of b] {$\segm{0}{1}$}
+    node[alabel, below=-1em of z] {$\segm{0}{2}$};
   \path<3->
     (a) edge[bend right=15] (b)
     (b) edge[bend right=15] (a)
     (b) edge[loop left] (b)
     (a) edge (z)
     (b) edge (z);
+  \path<4->
+    (a) edge[draw=none,bend right=15] node[alabel,left=-1pt] {$-1$} (b)
+    (b) edge[draw=none,bend right=15] node[alabel,right=-3pt] {$+1$} (a)
+    (b) edge[draw=none,loop left] node[alabel,left=-2pt] {$+1$} (b)
+    (a) edge[draw=none] node[alabel,above=-2pt] {$+1$} (z)
+    (b) edge[draw=none] node[alabel,below=-2pt] {$-1$} (z);
 \end{tikzpicture}
 \end{center}
+
 \end{frame}
 
 
 
 \begin{frame}[c]
-  \frametitle{The Asynchronous Discrete Networks (ADN)}
+  \frametitle{Analyse des modèles de Thomas}
 
-State Graph: $\SGadn = (\Fadn, \Eadn)$, where one component evolves at a time given its function $f^a$
+Graphe des états: $\SGadn = (\Fadn, \Eadn)$, avec une dynamique asynchrone (et unitaire)\\
+selon les fonctions d'évolution $f^a$ :
 $$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \forall b \neq a, y^b = x^b$$
 
 %\f Only one component at a time $a$ evolves to reach the value of its evolution function $f^a(x)$
@@ -84,32 +97,31 @@ $$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \for
 %\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc}
 %  Size of the State Graph: & $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$ &
 %\end{tabular*}
-Size of the State Graph: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$
+Taille du graphe des états: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$
 
 \medskip
-\f \tval{Exponential} in the number $|N|$ of components
+\f \tval{Exponentielle} dans le nombre $|N|$ de composants
 
 \pause
 \bigskip
-Some works give a link between the structure and the behaviour of an ADN
+Travaux permettant de tracer un lien entre structure et dynamique des modèles de Thomas :
 \begin{itemize}
-  \item \tval{Thomas' conjecture} (condition for multiple fixed points or attractive cycle)
+  \item \tval{Conjectures de Thomas'} (conditions pour cycles ou multi-stationnarité)
   \begin{itemize}
-    \item Boolean: \tcite{\todo{citeremy}}
-    \item Multivalued: \tcite{\todo{citerichardcomet}}
+    \item Cas booléen : \tcite{\todo{citeremy}}
+    \item Cas multivalué : \tcite{\todo{citerichardcomet}}
   \end{itemize}
 \end{itemize}
 
 \pause
 \medskip
-But methods related to reachability rely on the State Graph
-
-e.g.: \ex{Starting from $(a, b, z) = (0, 0, 0)$, can the system reach $z = 2$ ?}
+Mais les méthodes calculant l'atteignabilité nécessitent le graphe des états\\
+Ex : \ex{Depuis l'état $(a, b, z) = (0, 0, 0)$, est-il possible d'atteindre $z = 2$ ?}
 \begin{itemize}
-  \item \tval{Temporal logics}
+  \item \tval{Logiques temporelles}
   \begin{itemize}
-    \item CTL: \tcite{\todo{citesmbionet}}
-    \item LTL: \tcite{\todo{citeito}}
+    \item CTL : \tcite{\todo{citesmbionet}}
+    \item LTL : \tcite{\todo{citeito}}
   \end{itemize}
 \end{itemize}
 \end{frame}

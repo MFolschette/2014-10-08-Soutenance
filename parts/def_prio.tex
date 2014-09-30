@@ -1,35 +1,50 @@
 % Définition des priorités
 
-\begin{frame}[c]
-  \frametitle{Introduction of Classes of Priorities}
+\begin{frame}[t]
+  \frametitle{Introduction de classes de priorités}
   \framesubtitle{\tcite{\cfpmrcsbio}}
 
+\bigskip
 \begin{itemize}
-  \item Each action is associated to a class of priority.
-  \item An action cannot be played if another action of higher priority is playable.
+  \item À chaque action est associée une classe de priorité
+  \item Une action n'est jouable que si aucune action plus prioritaire ne l'est
 \end{itemize}
 
 \medskip
 
 \begin{center}
-\begin{tabular}{ccccc}
+% \begin{tabular}{ccccc}
+%   \hspace*{.3cm}\tikz \node[labelprio1] {$1$}; \hspace*{.3cm} &
+%   \hspace*{.3cm}\tikz \node[labelprio2] {$2$}; \hspace*{.3cm} &
+%   \hspace*{.3cm}\tikz \node[labelprio3] {$3$}; \hspace*{.3cm} &
+%   \vspace*{.5em}\hspace*{.3cm}\raisebox{5pt}{\ldots}\hspace*{.3cm} &
+%   \hspace*{.3cm}\tikz \node[labelprion] {$n$}; \hspace*{.3cm} \\\hline
+%   \multicolumn{2}{l}{
+%   \parbox{1.5cm}{\vspace*{.5em}plus haute\\priorité}} &
+%   %\parbox{1cm}{~} &
+%   \parbox{1cm}{~} &&
+%   \parbox{1.5cm}{\vspace*{.5em}plus basse\\priorité}
+% \end{tabular}
+% \hspace*{-1em}
+% \raisebox{2.2pt}{$\blacktriangleright$}
+
+\begin{tabular}{*{5}{>{\centering}p{1cm}}}
   \tikz \node[labelprio1] {$1$}; &
   \tikz \node[labelprio2] {$2$}; &
   \tikz \node[labelprio3] {$3$}; &
-  \vspace*{.5em}\hspace*{.3cm}\ldots\hspace*{.3cm} &
-    \tikz \node[labelprio, fill=gray!40] {$n$}; \\\hline
-  \parbox{1cm}{\vspace*{.5em}highest priority} &
-  \parbox{1cm}{~} & \parbox{1cm}{~} &&
-  \parbox{1cm}{\vspace*{.5em}lowest priority}
+  \raisebox{5pt}{\ldots} &
+  \tikz \node[labelprion] {$n$};
+\vspace*{.5em} \tabularnewline \hline
+  \multicolumn{2}{l}{\parbox{1.5cm}{\vspace*{.5em}le plus\\prioritaire}} &&
+  \multicolumn{2}{r}{\parbox{1.5cm}{\raggedleft\vspace*{.5em}le moins\\prioritaire}}
 \end{tabular}
 \hspace*{-1em}
 \raisebox{2.2pt}{$\blacktriangleright$}
 
 \bigskip
+
+\only<2>{
 \bigskip
-
-\pause
-
 \begin{tikzpicture}
   \path[use as bounding box] (-0.5,-0.5) rectangle (2.5,1.5);
   \TSort{(0,0)}{a}{2}{l}
@@ -49,7 +64,29 @@
 
 \bigskip
 
-\f $b_1$ \tval{cannot be reached}
+\f $b_1$ n'est \tval{jamais atteignable}
+}
 \end{center}
+
+\only<3->{
+\begin{itemize}
+  \item Permet de modéliser des classes d'actions de vitesses similaires
+\end{itemize}
+\begin{center}
+\begin{tabular}{*{5}{>{\centering}p{1cm}}}
+  \tikz \node[labelprio1,labelstocha] {$A$}; &
+  \tikz \node[labelprio2,labelstocha] {$B$}; &
+  \tikz \node[labelprio3,labelstocha] {$C$}; &
+  \raisebox{5pt}{\ldots} &
+  \tikz \node[labelprion,labelstocha] {$N$};
+\vspace*{.5em} \tabularnewline \hline
+  \multicolumn{1}{r}{\parbox{1cm}{\hspace*{-1.7cm}\parbox{2.5cm}{\raggedleft\vspace*{.5em}\tval{instantanée}\\(non contrôlable)}}} &
+  \multicolumn{2}{l}{\parbox{2cm}{\vspace*{.5em}\tval{très rapide}\\(contrôlable)}} &
+  \multicolumn{2}{r}{\parbox{2cm}{\raggedleft\vspace*{.5em}\tval{très lente}\\~}}
+\end{tabular}
+\hspace*{-1em}
+\raisebox{2.2pt}{$\blacktriangleright$}
+\end{center}
+}
 
 \end{frame}

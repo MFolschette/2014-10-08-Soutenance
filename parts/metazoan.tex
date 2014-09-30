@@ -1,5 +1,7 @@
+% Présentation de Metazoan
+
 \begin{frame}[t]
-  \frametitle{The Metazoan Segmentation Model}
+  \frametitle{Modèle de segmentation des métazoaires}
   \framesubtitle{\tcite{François \textit{et al.} in Molecular Systems Biology, 2007}}
 
 \makenoprio
@@ -8,15 +10,15 @@
   \path[use as bounding box] (-1,0) rectangle (8,6.5);
   
   \draw<2>[very thick, darkgreen, fill=green!10] (7,4.5) ellipse [x radius=1cm,y radius=2cm];
-  \node<2>[darkgreen, align=flush left, text width=3cm] at (7.7,2) {\Large \tval{Pigment production}};
-  \draw<2> (8,4) node[anchor=west, darkgreen] {0 = inactive}
+  \node<2>[darkgreen, align=flush left, text width=3cm] at (7.7,2) {\Large \tval{Production de pigment}};
+  \draw<2> (8,4) node[anchor=west, darkgreen] {0 = inactif}
            (8,5) node[anchor=west, darkgreen] {1 = production};
   
   \draw<3>[very thick, darkred, fill=red!10] (0,4.7) ellipse [x radius=1cm,y radius=1.5cm];
-  \node<3>[darkred, align=flush left, text width=2cm, anchor=west] at (1,5.8) {\Large \tval{Repression of $a$}};
+  \node<3>[darkred, align=flush left, text width=2cm, anchor=west] at (1,5.8) {\Large \tval{Répression de $a$}};
   
   \draw<4>[very thick, darkviolet, fill=violet!10] (1,0.5) ellipse [x radius=1cm,y radius=1.5cm];
-  \node<4>[darkviolet, align=flush left, anchor=west] at (2,-.3) {\Large \tval{Wavefront progression}};
+  \node<4>[darkviolet, align=flush left, anchor=west] at (2,-.3) {\Large \tval{Progression du front d'onde}};
   \draw<4> (0,0) node[anchor=east, darkviolet] {0 = “Off”}
            (0,1) node[anchor=east, darkviolet] {1 = “On”};
   
