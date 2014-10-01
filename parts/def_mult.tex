@@ -33,11 +33,11 @@
     \item[--] Consommation simultanée d'éléments
     \item[--] Production simultanée
   \end{itemize}
-  \item Représentation d'équations biochimiques :
+  \item Représentation d'équations biochimiques :\\
+    \centering $X \xrightarrow{Y} Z$\\
+    \raggedright sous la forme :\\
+    \centering $\PHfrappemults{X_1, Y_1, Z_0}{Z_1}$
 \end{itemize}
-
-\smallskip
-$A + B + C \rightarrow C + D$
 
 \vspace*{.5cm}
 
@@ -45,14 +45,19 @@ $A + B + C \rightarrow C + D$
 $h_2 = \PHfrappemults{a_1, b_1, c_0, d_0}{c_1, d_1}$}
 
 \vspace*{.5cm}
-$\PHfrappemult{A}{B}$
+Tous les processus de $A$\\
+doivent être présents pour jouer $\PHfrappemult{A}{B}$
 
-est jouable dans $s$ si et seulement si :
-
-$A \subset s$
-
-\bigskip
-Après jeu : $s \play (\PHfrappemult{A}{B}) = s \Cap B$
+\medskip
+Après le jeu de $\PHfrappemult{A}{B}$,\\
+tous les processus de $B$ sont présents.
+% 
+% est jouable dans $s$ si et seulement si :
+% 
+% $A \subset s$
+% 
+% \bigskip
+% Après jeu : $s \play (\PHfrappemult{A}{B}) = s \Cap B$
 
 \end{center}
 \end{column}

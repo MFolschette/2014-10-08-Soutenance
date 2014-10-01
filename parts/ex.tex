@@ -353,59 +353,6 @@
 
 
 
-%%% Figure de présentation de l'analyse d'atteignabilité
-\def \figsa {
-\begin{tikzpicture}
-\path[use as bounding box] (-5,-3.5) rectangle (5,3.5);
-\definecolor{r2}{RGB}{238,10,38}
-
-\path<2->[shading=1, inner color=r2, outer color=white] (3.5,-2.8) -- (4.4,3.2) -- (0,3) -- (-4.5,1.4) -- (-2.5,-2.5) -- (0,-3.6) -- (2.8,-2.8);
-%\path<2->[shading, inner color=r2, outer color=white, border color=white] (2.8,-2.8) -- (4.5,4.5) -- (0,3.9) -- (-4.5,1.8) -- (-5,-3) -- (0,-3.2) -- (2.8,-2.8);
-\draw<2->[thick,fill=white] (2.5,-2.1) -- (3,2.5) -- (-2.7,1.3) -- (-2,-2) -- (2.5,-2.1);
-\draw<6->[thick,fill=lightyellow] (2.5,-2.1) -- (3,2.5) -- (-2.7,1.3) -- (-2,-2) -- (2.5,-2.1);
-
-\node<2->[text width=3.5cm, color=red] (s1) at (-5,2) {Over-Approximation};
-\path<2->[->,very thick,color=red] (s1.south) edge (-3.5,1.2);
-%\node<2->[text width=3cm,color=black] (i1) at (3.7,.2) {$\Rightarrow$};
-\node<2->[text width=3cm,color=black] (q) at (4.5,.2) {$\neg Q$};
-
-%\draw<4->[thick, fill=green] (.5,-.8) -- (1,0) -- (.3,1) -- (-1,.5) -- (-.5,-.5) -- (.5,-.8);
-\draw<4->[thick, shading=1, top color=darkgreen, bottom color=green] (.5,-.8) -- (1,0) -- (.3,1) -- (-1,.5) -- (-.5,-.5) -- (.5,-.8);
-\node<4->[text width=3.5cm,color=darkgreen] (s2) at (5.2,-1.5) {Under-Approximation};
-\node<4->[text width=3cm,color=black] (p) at (1.8,.2) {$P$};
-%\node<4->[text width=3cm,color=black] (i1) at (2.25,.2) {$\Rightarrow$};
-
-% reaching set
-\node[text width=3cm,color=darkcyan] (s) at (1.8,1.7) {Exact solution};
-\node<1->[text width=3cm,color=darkcyan] (s0) at (0,0) {};
-\draw[color=darkcyan, thick] (0,0) ellipse (2 and 1.5);
-%\path<1>[draw=white] (2.8,-2.8) -- (4.5,4.5) -- (0,3.9) -- (-4.5,1.8) -- (-5,-3) -- (-2.5,-3.5) -- (0,-3.2) -- (2.8,-2.8);
-\node[text width=3cm,color=black] (r) at (2.8,.2) {$R$};
-
-\path<4->[->,very thick,color=darkgreen] (s2) edge (.6,-.4);
-
-\tikzstyle{point}=[circle,draw=blue,fill=blue,minimum size=5pt,inner sep=0pt]
-
-%\only<5->{
-\only<3->{
-\node[point] at (-2.4,-2) {};
-\node[point] at (-2,2) {};
-}
-\only<5->{
-\node[point] at (0,0) {};
-}
-\only<7->{
-\node[point] at (-.5,-1.1) {};
-\node[point] at (2.5,1) {};
-}
-%}
-
-\end{tikzpicture}
-}
-
-
-
-
 %%% Exemple pour points fixes
 \def \exdefb {
 \path[use as bounding box] (0,-1) rectangle (4,4);
@@ -859,15 +806,15 @@
   \node[Aobj] at (\lvalign,\lhfirst-\lhsep) (exobj) {#3};
   \node[Asol] at (\lvalign,\lhfirst-2*\lhsep) (exsol) {};
 
-  \node[llegend] at (\lvalignl,\lhfirst) {Required process};
-  \node[llegend] at (\lvalignl,\lhfirst-\lhsep) {Objective};
-  \node[llegend] at (\lvalignl,\lhfirst-2*\lhsep) {Solution to an objective};
+  \node[llegend] at (\lvalignl,\lhfirst) {Processus requis};
+  \node[llegend] at (\lvalignl,\lhfirst-\lhsep) {Objectif};
+  \node[llegend] at (\lvalignl,\lhfirst-2*\lhsep) {Solution d'un objectif};
 
   \ifthenelse{\equal{#1}{prio}}{%
     \node[Aproc] at (\lvalign-.3cm,\lhfirst-3*\lhsep) (aprio1) {$ab_{11}$};
     \node[Asol] at (\lvalign+.7cm,\lhfirst-3*\lhsep) (aprio2) {};
     \path (aprio1) edge[aSPrio] (aprio2);
-    \node[llegend] at (\lvalignl,\lhfirst-3*\lhsep) {\phantom{Mg}\\Solution to a prioritised\\cooperative sort process};
+    \node[llegend] at (\lvalignl,\lhfirst-3*\lhsep) {\phantom{Mg}\\Solution d'un processus\\de sorte coopérative};
     \path[legendbox] (0,0) rectangle (5.8,3.6);
   }{%
     \path[legendbox] (0,1) rectangle (5.8,3.6);

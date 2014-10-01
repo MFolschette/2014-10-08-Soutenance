@@ -109,9 +109,11 @@
 \colorlet{colorhlwarn}{notsodarkred}
 \colorlet{colorhlwarnbg}{lightred}
 \tikzstyle{Ahl}=[very thick,fill=colorhlwarnbg,draw=colorhlwarn,text=colorhlwarn]
-\tikzstyle{Ahledge}=[very thick,double=colorhlwarnbg,draw=colorhlwarn,color=colorhlwarn]
-\tikzstyle{Aex}=[thick,draw=couleurex,fill=couleurex!20]
-\tikzstyle{Aexedge}=[very thick,draw=couleurex,color=couleurex]
+\tikzstyle{Ahledge}=[very thick,double=colorhlwarnbg,draw=colorhlwarn,color=colorhlwarn,shorten >=-1pt]
+\tikzstyle{Ahlsol}=[very thick,draw=colorhlwarn,fill=colorhlwarnbg]
+\tikzstyle{Aex}=[very thick,draw=couleurex,fill=couleurex!20]
+\tikzstyle{Aexedge}=[very thick,draw=couleurex,color=couleurex,shorten >=-1pt]
+\tikzstyle{Aexsol}=[very thick,draw=couleurex,fill=couleurex!20]
 
 
 
@@ -154,3 +156,5 @@ minimum size=10pt, outer sep=0, font=\scriptsize, draw=none]
 
 \tikzstyle{apdot}=[andot] %[circle, fill=black, draw=black, inner sep=1]
 \tikzstyle{apdotsimple}=[] %[circle, fill=black, draw=black, inner sep=1]
+
+\tikzstyle{point}=[circle,draw=blue,fill=blue,minimum size=5pt,inner sep=0pt]

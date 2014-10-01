@@ -57,6 +57,7 @@
 % \colorlet{couleurliens}{darkblue}  % Couleur des citations
 
 \definecolor{couleurtheme}{rgb}{0.4,0.4,.8}
+\definecolor{couleuremph}{rgb}{0.3,0.3,.9}
 %\definecolor{couleurtheme}{rgb}{0,0.7,0.8}
 %\colorlet{couleurtheme}{darkcyan}  % Couleur principale du thème
 \colorlet{couleurcit}{gray}  % Couleur des citations
@@ -113,7 +114,7 @@
 
 \newcommand{\console}[1]{\textcolor{darkgray}{#1}}
 
-\newcommand{\emphcolor}[1]{\textcolor{couleurex}{#1}}
+\newcommand{\emphcolor}[1]{\textcolor{couleuremph}{#1}}
 
 % Style des citations
 \newcommand{\tscite}[1]{\textcolor{couleurcit}{#1}}
@@ -122,7 +123,7 @@
 
 \newcommand{\vol}{Vol.\ }
 %\newcommand{\no}{No.\ }
-\newcommand{\cad}{c.-à-d.}
+\newcommand{\cad}{c.-à-d.\ }
 
 
 
@@ -311,36 +312,39 @@ Mercredi 8 octobre 2014
 \input{parts/intro.tex}
 
 \section{État de l'art de la modélisation}
-% \input{parts/abstractions.tex}
-% \input{parts/def_thomas.tex}
-% 
-% \input{parts/def_ph.tex}
-% \input{parts/sc_temposhift.tex}
-% 
-% \input{parts/def_stocha.tex}
-%%%%% \input{parts/metazoan_stocha.tex}
-% \input{parts/metazoan.tex}
-% 
+\input{parts/abstractions.tex}
+\input{parts/def_thomas.tex}
+
+\input{parts/def_ph.tex}
+\input{parts/def_static.tex}
+\input{parts/def_stocha.tex}
+
+\section{Décalage temporel des sortes coopératives}
+\input{parts/sc_temposhift.tex}
+%%%% \input{parts/metazoan_stocha.tex}
+\input{parts/metazoan.tex}
+
 \section{Enrichissement des Frappes de Processus}
-% \input{parts/plan.tex}
-% \input{parts/def_prio.tex}
-% \input{parts/metazoan_prio.tex}
-% \input{parts/plan.tex}
-% \input{parts/def_an.tex}
-% \input{parts/metazoan_an.tex}
-% \input{parts/plan.tex}
+\input{parts/plan.tex}
+\input{parts/def_prio.tex}
+\input{parts/metazoan_prio.tex}
+\input{parts/plan.tex}
+\input{parts/def_an.tex}
+\input{parts/metazoan_an.tex}
+\input{parts/plan.tex}
 \input{parts/def_mult.tex}
 \input{parts/metazoan_mult.tex}
-% 
+
 \section{Frappes de Processus canoniques et analyse}
-% \input{parts/plan.tex}
-% \input{parts/sc_prio.tex}
-% \input{parts/prio_static.tex}
-% \input{parts/metazoan_canonique.tex}
-% 
-% \input{parts/trad.tex}
-% 
-% \input{parts/ccl.tex}
+\input{parts/plan.tex}
+\input{parts/sc_prio.tex}
+\input{parts/prio_static.tex}
+\input{parts/metazoan_canonique.tex}
+
+\input{parts/trad.tex}
+
+\section{Conclusion}% 
+\input{parts/ccl.tex}
 
 \appendix
 % % % \newcounter{finalframe}

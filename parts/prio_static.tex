@@ -1,33 +1,132 @@
 % Analyse statique avec priorités
 
 \begin{frame}[c]
-  \frametitle{Static analysis with prioritised actions}
+  \frametitle{Analyse statique des Frappes de Processus canoniques}
+%  \framesubtitle{\tcite{\cpmrmscs}}
+
+L'ajout de priorités restreint les dynamiques possibles (préemptions)
+
+\smallskip
+\f Invalidation de la sous-approximation existante
+
+\begin{center}
+\scalebox{0.6}{
+\begin{tikzpicture}
+  \path[use as bounding box] (-5,-3.5) rectangle (5,3.5);
+  \definecolor{r2}{RGB}{238,10,38}
+
+  \draw[shading=2, inner color=r2, outer color=white, rounded corners, draw=none] (-6,3.5) rectangle (6,-3.5);
+  \draw[thick,fill=white] (-2.8,2) rectangle (2.8,-2);
+  \draw<4->[thick,fill=lightyellow] (-2.8,2) rectangle (2.8,-2);
+  \draw<1>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=1] (-1.5,.7) rectangle (1.5,-.7);;
+  \draw<2>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=0.3] (-1.5,.7) rectangle (1.5,-.7);;
+  \draw<1>[color=darkcyan, ultra thick] (0,0) ellipse (2 and 1.5);
+  \draw<2->[color=darkcyan, ultra thick] (0,1.5) arc [start angle=90, end angle=270, x radius=2, y radius=1.5] -- cycle;
+  \draw<3->[thick, shading=1, top color=darkgreen, bottom color=green] (-1.5,.7) rectangle (-.3,-.7);;
+\end{tikzpicture}
+}
+\end{center}
+
+\uncover<5->{
+Complexité équivalente pour un formalisme plus expressif
+
+\begin{fleches}
+  \item Toujours efficace pour de grands modèles
+  \item Sous-approximation plus fine
+\end{fleches}
+}
+\end{frame}
+
+
+\begin{frame}[c]
+  \frametitle{Analyse statique des Frappes de Processus canoniques}
   \framesubtitle{\tcite{\cfpmrcsbio}}
 
-\tval{Sufficient condition:}
+\uncover<8->{
+\tval{Condition suffisante :}
 
 \begin{itemize}
-  \item no cycle
-  \item each objective has a solution
-  \item \only<-4>{coherent edges}\only<5->{\sout{coherent edges}}
+  \item aucun cycle
+  \item tout objectif possède une solution
+  \item \only<-11>{cohérence des requis}\only<12->{\sout{cohérence des requis}}
 \end{itemize}
 \vspace{1cm}
-\hspace{2cm}\uncover<5->{\textcolor{darkyellow}{\textbf{Inconclusive}}}
+\hspace{2cm}\uncover<12->{\textcolor{darkyellow}{\textbf{Non conclusif}}}
 \vspace{-3cm}
+}
 
 \begin{center}\scalebox{\scaleex}{
 \begin{tikzpicture}[aS]
-  \priostatic
-
-  \path<2-5> (ab11) edge[aSPrio,Aexedge] (ab11s);
-  \path<5-> (ab11) edge[aSPrio,Ahledge] (ab11s);
-
-  \node<3>[Aproc,Aex,at=(a1)] {$a_1$};
-  \node<3>[Aproc,Aex,at=(b1)] {$b_1$};
-  \node<4->[Aproc,Ahl,at=(a1)] {$a_1$};
-  \node<4->[Aproc,Ahl,at=(a0)] {$a_0$};
-  %\node<2>[Aproc,Ahl,at=(b0)] {$b_0$};
-  %\node<2>[Aproc,Ahl,at=(b1)] {$b_1$};
+  \path[draw=none,use as bounding box] (-.5,-2.2) rectangle (12,2.2);
+  \node[Aproc] (z1) {$z_1$};
+  \uncover<2->{ \node[Aobj,right of=z1] (z01) {$\PHobj{z_0}{z_1}$}; }
+  \uncover<3->{ \node[Asol,right of=z01] (z01s) {}; }
+  
+  \uncover<4->{ \node[Aproc,right of=z01s] (ab11) {$ab_{11}$}; }
+  \uncover<5->{ \node[Asol,right of=ab11] (ab11s) {}; }
+  
+  \uncover<6->{
+    \node[Aproc,above right of=ab11s] (a1) {$a_1$};
+    \node[Aproc,below right of=ab11s] (b1) {$b_1$};
+  }
+  
+  \uncover<7->{
+    \node[Aobj,above right of=a1] (a11) {$\PHobj{a_1}{a_1}$};
+    \node[Asol,right of=a11] (a11s) {};
+    \node[Aobj,right of=a1] (a01) {$\PHobj{a_0}{a_1}$};
+    \node[Asol,right of=a01] (a01s) {};
+    \node[Aproc,right of=a01s] (b0) {$b_0$};
+    \node[Aobj,right of=b0] (b00) {$\PHobj{b_0}{b_0}$};
+    \node[Asol,right of=b00] (b00s) {};
+    \node[Aobj,above right of=b0] (b10) {$\PHobj{b_1}{b_0}$};
+    \node[Asol,right of=b10] (b10s) {};
+    
+    \node[Aobj,below right of=b1] (b11) {$\PHobj{b_1}{b_1}$};
+    \node[Asol,right of=b11] (b11s) {};
+    \node[Aobj,right of=b1] (b01) {$\PHobj{b_0}{b_1}$};
+    \node[Asol,right of=b01] (b01s) {};
+    \node[Aproc,right of=b01s] (a0) {$a_0$};
+    \node[Aobj,right of=a0] (a00) {$\PHobj{a_0}{a_0}$};
+    \node[Asol,right of=a00] (a00s) {};
+    \node[Aobj,below right of=a0] (a10) {$\PHobj{a_1}{a_0}$};
+    \node[Asol,right of=a10] (a10s) {};
+  }
+  
+  \path (z1) edge (z01);
+  \path<2-> (z01) edge (z01s);
+  \path<3-> (z01s) edge (ab11);
+  \path<4-> (ab11) edge[aSPrio] (ab11s);
+  \path<5-> (ab11s) edge (a1) edge (b1);
+  \path<6-> (a1) edge (a01) edge (a11) (b1) edge (b01) edge (b11);
+  
+  \path<7->
+  (a01) edge (a01s)
+  (a01s) edge (b0)
+  (a11) edge (a11s)
+  (a0) edge (a10) edge (a00)
+  (a10) edge (a10s)
+  (a00) edge (a00s)
+  
+  (b0) edge (b10) edge (b00)
+  (b10) edge (b10s)
+  (b00) edge (b00s)
+  (b01) edge (b01s)
+  (b01s) edge (a0)
+  (b11) edge (b11s)
+  ;
+  
+  % Arc non cohérent
+  \node<9-11>[Aproc,Aex,at=(ab11)] {$ab_{11}$};
+  \node<9-11>[Asol,Aexsol,right of=ab11] (ab11s) {};
+  \path<9-11> (ab11) edge[aSPrio,Aexedge] (ab11s);
+  \node<12>[Aproc,Ahl,at=(ab11)] {$ab_{11}$};
+  \node<12>[Asol,Ahlsol,right of=ab11] (ab11s) {};
+  \path<12> (ab11) edge[aSPrio,Ahledge] (ab11s);
+  
+  \node<10>[Aproc,Aex,at=(a1)] {$a_1$};
+  \node<10>[Aproc,Aex,at=(b1)] {$b_1$};
+  \node<11->[Aproc,Ahl,at=(a1)] {$a_1$};
+  \node<11->[Aproc,Ahl,at=(a0)] {$a_0$};
 \end{tikzpicture}
 }\end{center}
 
@@ -55,26 +154,29 @@
 \begin{frame}[c]
   \frametitle{Implémentation}
 
-Complexity:
+Complexité :
 
 \begin{itemize}
-  \item Building the graph:
+  \item Construction du graphe de causalité locale :
   \begin{itemize}
-    \item Polynomial in the number of sorts
-    \item Exponential in the number of processes in each sort
+    \item Polynomiale dans le nombre de sortes
+    \item Exponentielle dans le nombre de processus de chaque sorte
   \end{itemize}
-  \item Analysing the graph:
+  \item Analyse du graphe (condition suffisante) :
   \begin{itemize}
-    \item Polynomial in the size of the graph
+    \item Polynomiale dans la taille du graphe
   \end{itemize}
 \end{itemize}
 
 \pause
+\medskip
+L'étude de grands réseaux devient possible :
+
 \bigskip
 \small
 \begin{tabular}{r||c|c|c|c||c|c|c|}
-\hline
-\tval{Model} & Sorts & Procs & Actions & States & libddd$^1$ & GINsim$^2$ & \Pint \\\hline
+%\hline
+\tval{Modèle} & Sortes & Processus & Actions & États & libddd$^1$ & GINsim$^2$ & \Pint \\\hline
 \tval{\ex{egfr20}} & 35 & 196 & 670 & $2^{64}$ & & $<$1s & \tval{0.35s} \\\hline
 \tval{\ex{tcrsig40}} & 54 & 156 & 301 & $2^{73}$ & & $\infty$ & \tval{0.2s} \\\hline
 \tval{\ex{tcrsig94}} & 133 & 448 & 1124 & $2^{194}$ & [13min -- $\infty$] & & \tval{0.8s} \\\hline
