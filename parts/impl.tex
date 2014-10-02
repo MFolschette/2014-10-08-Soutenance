@@ -1,0 +1,38 @@
+% Implémentation
+
+\begin{frame}[c]
+  \frametitle{Traduction en modèle de Thomas}
+
+\begin{itemize}
+  \item Inférence du graphe des interactions, puis des paramètres
+  \item Analyse exhaustive de la dynamique locale pour chaque régulateur
+  \item Possibilité d'énumérer toutes les paramétrisations compatibles avec la dynamique
+\end{itemize}
+
+\bigskip
+\tval{Complexité} :\\
+\quad Linéaire dans le nombre de composants\\ %linear in the number of genes,\\
+\quad Exponentielle dans le nombre de régulateurs de chauqe composant %exponential in the number of regulators of one gene
+
+\pause
+\bigskip
+\small
+\begin{tabular}{r||c|c|c||c|c||c|c|}
+\multicolumn{4}{c||}{Modèles} & \multicolumn{2}{c||}{Inférence du GI} & \multicolumn{2}{c|}{Inférence des paramètres}\\
+\hline
+\tval{Nom} & Sortes & Processus & Actions & $\Delta t$ & Arcs & $\Delta t$ & Paramètres\\
+\hline
+  \tval{\ex{egfr20}} & 22 & 152 & 399 & \tval{1s} & 50 & \tval{1s} & 191\\
+\hline
+  \tval{\ex{tcrsig40}} & 14 & 156 & 301 & \tval{1s} & 54 & \tval{1s} & 143\\
+\hline
+  \tval{\ex{tcrsig94}} & 39 & 448 & 1124 & \tval{13s} & 169 & $\infty$ & $2.10^9$\\
+\hline
+  \tval{\ex{egfr104}} & 89 & 748 & 2356 & \tval{4min} & 241 & \tval{1min 30s} & $1.10^6 / 2.10^6$\\
+\hline
+\end{tabular}
+
+%S = Sortes \quad CS = Sortes coopératives \quad P = Processus \quad A = Actions
+
+\cmodels
+\end{frame}

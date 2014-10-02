@@ -86,8 +86,9 @@
 \begin{frame}[c]
   \frametitle{Analyse des modèles de Thomas}
 
-Graphe des états: $\SGadn = (\Fadn, \Eadn)$, avec une dynamique asynchrone (et unitaire)\\
-selon les fonctions d'évolution $f^a$ :
+Graphe des états: $\SGadn = (\Fadn, \Eadn)$, calculé d'après les fonctions d'évolution $f^a$\\
+et selon une dynamique asynchrone et unitaire :\\
+%selon les fonctions d'évolution $f^a$ :
 $$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \forall b \neq a, y^b = x^b$$
 
 %\f Only one component at a time $a$ evolves to reach the value of its evolution function $f^a(x)$
@@ -106,7 +107,7 @@ Taille du graphe des états: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fad
 \bigskip
 Travaux permettant de tracer un lien entre structure et dynamique des modèles de Thomas :
 \begin{itemize}
-  \item \tval{Conjectures de Thomas'} (conditions pour cycles ou multi-stationnarité)
+  \item \tval{Conjectures de Thomas} (conditions pour oscillations ou multi-stationnarité)
   \begin{itemize}
     \item Cas booléen : \tcite{\todo{citeremy}}
     \item Cas multivalué : \tcite{\todo{citerichardcomet}}
