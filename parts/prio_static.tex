@@ -2,6 +2,7 @@
 
 \begin{frame}[c]
   \frametitle{Analyse statique des Frappes de Processus canoniques}
+  \framesubtitle{\tcite{\cfpmrcsbio}}
 %  \framesubtitle{\tcite{\cpmrmscs}}
 
 L'ajout de priorités restreint les dynamiques possibles (préemptions)
@@ -20,9 +21,10 @@ L'ajout de priorités restreint les dynamiques possibles (préemptions)
   \draw<4->[thick,fill=lightyellow] (-2.8,2) rectangle (2.8,-2);
   \draw<1>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=1] (-1.5,.7) rectangle (1.5,-.7);;
   \draw<2>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=0.3] (-1.5,.7) rectangle (1.5,-.7);;
-  \draw<1>[color=darkcyan, ultra thick] (0,0) ellipse (2 and 1.5);
-  \draw<2->[color=darkcyan, ultra thick] (0,1.5) arc [start angle=90, end angle=270, x radius=2, y radius=1.5] -- cycle;
-  \draw<3->[thick, shading=1, top color=darkgreen, bottom color=green] (-1.5,.7) rectangle (-.3,-.7);;
+%  \draw<1>[color=darkcyan, ultra thick] (0,0) ellipse (2 and 1.5);
+  \draw<1>[color=darkcyan, ultra thick] (1,1.3) arc [start angle=60, end angle=420, x radius=2, y radius=1.5] -- cycle;
+  \draw<2->[color=darkcyan, ultra thick] (1,1.3) arc [start angle=60, end angle=300, x radius=2, y radius=1.5] -- cycle;
+  \draw<3->[thick, shading=1, top color=darkgreen, bottom color=green] (-1.5,.7) rectangle (.8,-.7);;
 \end{tikzpicture}
 }
 \end{center}
