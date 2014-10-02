@@ -6,14 +6,21 @@
 La modélisation d'un système est la première étape vers sa compréhension
 
 \begin{center}
-  \includegraphics[width=.4\textwidth]{figs/modelanalyse.png}
+\begin{tikzpicture}
+  \node[ellipse, fill=blue!20] (m) at (-1.5, 0) {Modélisation};
+  \node[ellipse, fill=violet!20] (a) at (1.5, 0) {Analyse};
+  \uncover<2->{ \path[->, shorten >=1em, shorten <=1em] (a) edge[ultra thick, bend left] (m); }
+  \uncover<3->{ \path[->, shorten >=1em, shorten <=1em] (m) edge[ultra thick, bend left] (a); }
+\end{tikzpicture}
 \end{center}
 
+\pause[2]
 L'analyse recherchée impacte les choix de modélisation
 \begin{itemize}
   \item Les outils de modélisation doivent être adaptés aux propriétés observées
 \end{itemize}
 
+\pause[3]
 \medskip
 Les choix de modélisation impactent les résultats de l'analyse
 \begin{itemize}
@@ -21,6 +28,7 @@ Les choix de modélisation impactent les résultats de l'analyse
   \item Un modèle de grande taille augmente le temps d'analyse
 \end{itemize}
 
+\pause[4]
 \medskip
 \begin{center}
 \tval{Les étapes de modélisation et d'analyse d'un système sont indissociables}
@@ -33,23 +41,24 @@ Les choix de modélisation impactent les résultats de l'analyse
 \begin{frame}[c]
 \frametitle{Plan}
 
-\todo{LE PLAN}
-
-État de l'art de la modélisation
+\tval{État de l'art} de la modélisation des réseaux de régulation biologique
 \begin{itemize}
   \item Modélisations discrètes asynchrones
-  \item Réseaux discrets et modèle de Thomas
+  \item Modèle de Thomas
   \item Frappes de Processus standards
 \end{itemize}
 
-Enrichissement des Frappes de Processus
+\pause
+\bigskip
+\tval{Enrichissement} de la modélisation des Frappes de Processus
 \begin{itemize}
-  \item Priorités
-  \item Arcs neutralisants
-  \item Actions plurielles
+  \item Ajout de priorités, d'arcs neutralisants ou d'actions plurielles
+  \item Intégration de données ou de contraintes temporelles
 \end{itemize}
 
-Analyse des Frappes de Processus
+\pause
+\bigskip
+\tval{Analyse} des Frappes de Processus
 \begin{itemize}
   \item Correction des sortes coopératives
   \item Analyse statique pour l'atteignabilité

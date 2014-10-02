@@ -1,13 +1,13 @@
 % Abstractions
 
 \begin{frame}[c]
-  \frametitle{Gene regulations}
+  \frametitle{Abstractions de la représentation}
 
 \begin{center}
-  \includegraphics[width=.4\textwidth]{figs/protein.png}
+  \includegraphics[width=.5\textwidth]{figs/protein.png}
   \uncover<2>{
     \begin{tikzpicture}
-      \path[use as bounding box] (-3, 1) rectangle (0, -1.5);
+      \path[use as bounding box] (-3, 1) rectangle (0, -2);
       \node at (-1.5,.7) (ga) {\underline{Gène a}};
       \node at (-1.5,-0.7) (pa) {\underline{Protéine a}};
       \node[draw=none] at (-2.5,0) {$\Rightarrow$};
@@ -17,7 +17,7 @@
   \uncover<2>{
     \scalebox{2}{
     \begin{tikzpicture}[adn]
-      \path[use as bounding box] (-.3, .5) rectangle (0.5, -.7);
+      \path[use as bounding box] (-.3, .5) rectangle (0.5, -1);
       \node (a) {a};
     \end{tikzpicture}}
   }
@@ -31,7 +31,7 @@
   \frametitle{Discrétisation et asynchronisme}
 
 \begin{center}
-  \includegraphics[width=.8\textwidth]{figs/seuils1.png}
+  \includegraphics[width=.75\textwidth]{figs/seuils1.png}
 \end{center}
 
 \begin{tikzpicture}[adn]
@@ -52,16 +52,17 @@
   \path<1>[fill=white] (3.3,-4.2) rectangle (8,1);
 \end{tikzpicture}
 
-\vspace*{-1em}
-\pause[3]
-Concentrations ou niveaux d'activité continus
-
-\quad \f Abstraction sous forme de niveaux discrets correspondant à des seuils
-
+\vspace*{-2.5em}
+\pause[2]
+\begin{itemize}
+  \item Concentrations ou niveaux d'activité continus\\
+    \quad \f Abstraction sous forme de seuils et de \tval{niveaux discrets}
 \pause
-\medskip
-Simultanéité de passage d'un seuil très peu probable
-
-\quad \f Asynchronisme
+  \item Variations continues des valeurs réelles\\
+    \quad \f Dynamique \tval{unitaire}
+\pause
+  \item Simultanéité de passage d'un seuil très peu probable\\
+    \quad \f Dynamique \tval{asynchrone}
+\end{itemize}
 
 \end{frame}
