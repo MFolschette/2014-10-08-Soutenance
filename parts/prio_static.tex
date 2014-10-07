@@ -50,7 +50,7 @@ Complexité équivalente pour un formalisme plus expressif
 \begin{itemize}
   \item aucun cycle
   \item tout objectif possède une solution
-  \item \only<-11>{cohérence des requis}\only<12->{\sout{cohérence des requis}}
+  \item \only<-11>{cohérence des coopérations}\only<12->{\sout{cohérence des coopérations}}
 \end{itemize}
 \vspace{1cm}
 \hspace{2cm}\uncover<12->{\textcolor{darkyellow}{\textbf{Non conclusif}}}
@@ -175,19 +175,21 @@ Complexité :
 L'étude de grands réseaux devient possible :
 
 \bigskip
-\small
+\footnotesize
 \begin{tabular}{r||c|c|c|c||c|c|c|}
 %\hline
 \tval{Modèle} & Sortes & Processus & Actions & États & libddd$^1$ & GINsim$^2$ & \Pint \\\hline
 \tval{\ex{egfr20}} & 35 & 196 & 670 & $2^{64}$ & & $<$1s & \tval{0.02s} \\\hline
 \tval{\ex{tcrsig40}} & 54 & 156 & 301 & $2^{73}$ & & $\infty$ & \tval{0.02s} \\\hline
 \tval{\ex{tcrsig94}} & 133 & 448 & 1124 & $2^{194}$ & [13min -- $\infty$] & & \tval{0.03s} \\\hline
-\tval{\ex{egfr104}} & 193 & 748 & 2356 & $2^{320}$ & & & \tval{0.08s}\\\hline
+\tval{\ex{egfr104}} & 193 & 748 & 2356 & $2^{320}$ & & & \tval{0.16s}\\\hline
 \end{tabular}
 
-\medskip
-\quad$^1$ LIP6/Move\\
+\bigskip
+\quad$^1$ LIP6/Move
+\tcite{Couvreur \textit{et al.}, \textit{Lecture Notes in Computer Science}, 2002}\\
 \quad$^2$ TAGC/IGC
+\tcite{Gonzalez \textit{et al.}, \textit{Biosystems}, 2006}
 
 %S = Sorts \quad CS = Cooperative sorts \quad P = Processes \quad A = Actions
 

@@ -25,28 +25,6 @@
 \def \exphcoop {
 \path[use as bounding box] (-0.5,-0.5) rectangle (7.5,4.5);
 
-% Actions de màj grisées
-\only<7-8,10-11>{
-\THit{a_1}{ulhit,color=lightgray}{ab_0}{.west}{ab_2}
-\THit{a_1}{ulhit,color=lightgray}{ab_1}{.160}{ab_3}
-\path[bounce,bend left,pulhit] \TBounce{ab_0}{bulhit}{ab_2}{.240} \TBounce{ab_1}{bulhit}{ab_3}{.south west} ;
-}
-
-\only<8-8,10-11>{
-\THit{a_0}{ulhit}{ab_2}{.160}{ab_0}
-\THit{a_0}{ulhit}{ab_3}{.150}{ab_1}
-\path[bounce,bend right,pulhit] \TBounce{ab_2}{bulhit}{ab_0}{.north west} \TBounce{ab_3}{bulhit}{ab_1}{.120} ;
-}
-
-\only<10-11>{
-\THit{b_0}{ulhit}{ab_3}{.190}{ab_2}
-\THit{b_0}{ulhit}{ab_1}{.200}{ab_0}
-\THit{b_1}{ulhit}{ab_0}{.210}{ab_1}
-\THit{b_1}{ulhit}{ab_2}{.200}{ab_3}
-\path[bounce,bend right,pulhit] \TBounce{ab_1}{bulhit}{ab_0}{.north} \TBounce{ab_3}{bulhit}{ab_2}{.120} ;
-\path[bounce,bend left,pulhit] \TBounce{ab_0}{bulhit}{ab_1}{.240} \TBounce{ab_2}{bulhit}{ab_3}{.south} ;
-}
-
 % Sortes
 %\TSort{(0,3)}{a}{2}{l}
 %\TSort{(0,0)}{b}{2}{l}
@@ -81,6 +59,30 @@
 \TSetTick{ab}{3}{11}
 %\TSort{(3,0.5)}{ab}{4}{l}
 \TSort{(4,0.5)}{ab}{4}{r}
+}
+
+
+
+% Actions de màj grisées
+\only<7-8,10-11>{
+\THit{a_1}{ulhit,color=lightgray}{ab_0}{.west}{ab_2}
+\THit{a_1}{ulhit,color=lightgray}{ab_1}{.160}{ab_3}
+\path[bounce,bend left,pulhit] \TBounce{ab_0}{bulhit}{ab_2}{.240} \TBounce{ab_1}{bulhit}{ab_3}{.south west} ;
+}
+
+\only<8-8,10-11>{
+\THit{a_0}{ulhit}{ab_2}{.160}{ab_0}
+\THit{a_0}{ulhit}{ab_3}{.150}{ab_1}
+\path[bounce,bend right,pulhit] \TBounce{ab_2}{bulhit}{ab_0}{.north west} \TBounce{ab_3}{bulhit}{ab_1}{.120} ;
+}
+
+\only<10-11>{
+\THit{b_0}{ulhit}{ab_3}{.190}{ab_2}
+\THit{b_0}{ulhit}{ab_1}{.200}{ab_0}
+\THit{b_1}{ulhit}{ab_0}{.210}{ab_1}
+\THit{b_1}{ulhit}{ab_2}{.200}{ab_3}
+\path[bounce,bend right,pulhit] \TBounce{ab_1}{bulhit}{ab_0}{.north} \TBounce{ab_3}{bulhit}{ab_2}{.120} ;
+\path[bounce,bend left,pulhit] \TBounce{ab_0}{bulhit}{ab_1}{.240} \TBounce{ab_2}{bulhit}{ab_3}{.south} ;
 }
 
 
