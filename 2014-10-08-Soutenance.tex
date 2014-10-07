@@ -15,6 +15,7 @@
 %\usepackage{ifthen} % Structures If Then Else
 \usepackage{theorem} % Styles supplémentaires pour théorèmes
 \usepackage{url}
+\usepackage{xcolor,colortbl} % Cellules colorées
 \usepackage{array}  % Tableaux évolués
 \usepackage{multirow}  % Pour des colonnes sur plusieurs lignes
 
@@ -65,7 +66,7 @@
 \colorlet{couleurex}{blue}  % Couleur des citations
 \colorlet{couleurliens}{darkblue}  % Couleur des citations
 %\definecolor{couleurtitre}{rgb}{0.54,0.8,0.9}
-\colorlet{couleurtitre}{couleurtheme!50}  % Couleur des citations
+\colorlet{couleurtitre}{couleurtheme!50}  % Cadre du titre
 
 \usetheme{Pittsburgh}   % Thème général
 \usefonttheme{default}  % Thème de polices
@@ -263,7 +264,7 @@ Mercredi 8 octobre 2014
     IRISA (CNRS \& Université Rennes 1), Inria Rennes \vspace*{1em} \\
 \textbf{Examinateurs :}
 & Mireille RÉGNIER, Directrice de recherche Inria,
-    École Polytechnique \& Université Paris-Sud 11 \\
+    École polytechnique \& Université Paris-Sud 11 \\
 & Denis THIEFFRY, Professeur des universités,
     École normale supérieure \vspace*{1em} \\
 \textbf{Directeur de thèse :}
@@ -350,28 +351,20 @@ Mercredi 8 octobre 2014
 
 \input{parts/def_ph.tex}
 \input{parts/def_static.tex}
-%%%%%%%\input{parts/def_stocha.tex}
-
-%%% \section{Permissivité de la dynamique}
 
 \section{Enrichissement des Frappes de Processus}
-%%%%\input{parts/plan.tex}
 \input{parts/metazoan.tex}
-%%%%\input{parts/plan.tex}
 \subsection{Classes de priorités}
 \input{parts/def_prio.tex}
 \input{parts/metazoan_prio.tex}
-%%%%\input{parts/plan.tex}
 \subsection{Arcs neutralisants}
 \input{parts/def_an.tex}
 \input{parts/metazoan_an.tex}
-%%%%\input{parts/plan.tex}
 \subsection{Actions plurielles}
 \input{parts/def_mult.tex}
 \input{parts/metazoan_mult.tex}
 
 \section{Frappes de Processus canoniques et analyse}
-%%%%\input{parts/plan.tex}
 \subsection{Frappes de Processus canoniques}
 \input{parts/sc_temposhift.tex}
 \input{parts/sc_prio.tex}
@@ -384,8 +377,8 @@ Mercredi 8 octobre 2014
 
 \section{Conclusion}
 \input{parts/ccl.tex}
-
-
+\section[x]{Merci pour votre attention}
+\input{parts/merci.tex}
 
 \appendix
 \newcounter{finalframe}
@@ -394,7 +387,7 @@ Mercredi 8 octobre 2014
 \section[x]{Bibliographie}
 \input{parts/biblio.tex}
 
-\section[x]{Analyse statique des Frappes de Processus standards}
+\section{Analyse statique des Frappes de Processus standards}
 \input{parts/annex_static.tex}
 \input{parts/annex_fp.tex}
 

@@ -29,9 +29,11 @@
   \node<2>[darkgreen, align=flush left, text width=3cm] at (7.7,2) {\Large \tval{Production de pigment}};
   \draw<2> (8,4) node[anchor=west, darkgreen] {0 = inactif}
            (8,5) node[anchor=west, darkgreen] {1 = production};
+  \draw<3-> (7.75,4.02) node[anchor=west, darkgreen] {= inactif}
+           (7.75,5) node[anchor=west, darkgreen] {= production};
   
   \draw<3>[very thick, darkred, fill=red!10] (0,4.7) ellipse [x radius=1cm,y radius=1.5cm];
-  \node<3>[darkred, align=flush left, text width=2cm, anchor=west] at (1,5.8) {\Large \tval{Répression de $a$}};
+  \node<3>[darkred, align=flush left, text width=2cm, anchor=west] at (1,5.8) {\Large \tval{Horloge}};
   
   \draw<4>[very thick, darkviolet, fill=violet!10] (1,0.5) ellipse [x radius=1cm,y radius=1.5cm];
   \node<4>[darkviolet, align=flush left, anchor=west] at (2,-.3) {\Large \tval{Progression du front d'onde}};
@@ -122,7 +124,7 @@
 
 \end{tikzpicture}
 
-\pause[15]
+\pause[19]
 \vspace*{.5cm}
 \hfill
 \begin{tikzpicture}
@@ -151,5 +153,3 @@
 \pause[15]
 
 \end{frame}
-
-

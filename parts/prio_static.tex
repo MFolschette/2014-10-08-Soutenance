@@ -20,7 +20,7 @@ L'ajout de priorités restreint les dynamiques possibles (préemptions)
   \draw[thick,fill=white] (-2.8,2) rectangle (2.8,-2);
   \draw<4->[thick,fill=lightyellow] (-2.8,2) rectangle (2.8,-2);
   \draw<1>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=1] (-1.5,.7) rectangle (1.5,-.7);;
-  \draw<2>[thick, shading=1, top color=darkgreen, bottom color=green,opacity=0.3] (-1.5,.7) rectangle (1.5,-.7);;
+  \draw<2->[thick, shading=1, top color=darkgreen, bottom color=green,opacity=0.3] (-1.5,.7) rectangle (1.5,-.7);;
 %  \draw<1>[color=darkcyan, ultra thick] (0,0) ellipse (2 and 1.5);
   \draw<1>[color=darkcyan, ultra thick] (1,1.3) arc [start angle=60, end angle=420, x radius=2, y radius=1.5] -- cycle;
   \draw<2->[color=darkcyan, ultra thick] (1,1.3) arc [start angle=60, end angle=300, x radius=2, y radius=1.5] -- cycle;
@@ -154,7 +154,7 @@ Complexité équivalente pour un formalisme plus expressif
 
 
 \begin{frame}[c]
-  \frametitle{Implémentation}
+  \frametitle{Implémentation de l'analyse statique dans \Pint}
 
 Complexité :
 
@@ -175,21 +175,23 @@ Complexité :
 L'étude de grands réseaux devient possible :
 
 \bigskip
-\footnotesize
+\small
 \begin{tabular}{r||c|c|c|c||c|c|c|}
 %\hline
-\tval{Modèle} & Sortes & Processus & Actions & États & libddd$^1$ & GINsim$^2$ & \Pint \\\hline
-\tval{\ex{egfr20}} & 35 & 196 & 670 & $2^{64}$ & & $<$1s & \tval{0.02s} \\\hline
-\tval{\ex{tcrsig40}} & 54 & 156 & 301 & $2^{73}$ & & $\infty$ & \tval{0.02s} \\\hline
-\tval{\ex{tcrsig94}} & 133 & 448 & 1124 & $2^{194}$ & [13min -- $\infty$] & & \tval{0.03s} \\\hline
-\tval{\ex{egfr104}} & 193 & 748 & 2356 & $2^{320}$ & & & \tval{0.16s}\\\hline
+\tval{Modèle} & Sortes & Processus & Actions & États & libddd$^1$ & GINsim$^2$ & \cellcolor{couleurtitre} \Pint \\\hline
+\tval{\ex{egfr20}} & 35 & 196 & 670 & $2^{64}$ & & $<$1s & \cellcolor{couleurtitre} \tval{0.02s} \\\hline
+\tval{\ex{tcrsig40}} & 54 & 156 & 301 & $2^{73}$ & & $\infty$ & \cellcolor{couleurtitre} \tval{0.02s} \\\hline
+\tval{\ex{tcrsig94}} & 133 & 448 & 1124 & $2^{194}$ & [13min -- $\infty$] & & \cellcolor{couleurtitre} \tval{0.03s} \\\hline
+\tval{\ex{egfr104}} & 193 & 748 & 2356 & $2^{320}$ & & & \cellcolor{couleurtitre} \tval{0.16s}\\\hline
 \end{tabular}
 
 \bigskip
+\footnotesize
 \quad$^1$ LIP6/Move
 \tcite{Couvreur \textit{et al.}, \textit{Lecture Notes in Computer Science}, 2002}\\
 \quad$^2$ TAGC/IGC
-\tcite{Gonzalez \textit{et al.}, \textit{Biosystems}, 2006}
+%\tcite{Gonzalez \textit{et al.}, \textit{Biosystems}, 2006}
+\tcite{Chaouiya, Naldi, Thieffry, \textit{Methods in Molecular Biology}, 2012}
 
 %S = Sorts \quad CS = Cooperative sorts \quad P = Processes \quad A = Actions
 

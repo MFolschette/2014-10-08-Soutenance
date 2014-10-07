@@ -86,25 +86,55 @@
 \begin{frame}[c]
   \frametitle{Analyse des modèles de Thomas}
 
-% \centering
-% \begin{tikzpicture}[stategraph]
-%   \node (000) {$\RRBetat{a_0,b_0,z_0}$};
-%   \node[right of=000] (001) {$\RRBetat{a_0,b_0,z_1}$};
-%   \node[right of=001] (002) {$\RRBetat{a_0,b_0,z_2}$};
-%   
-%   \node[below of=000] (100) {$\RRBetat{a_1,b_0,z_0}$};
-% \end{tikzpicture}
+Graphe des états calculé selon une dynamique asynchrone et unitaire :
+\begin{center}
+\scalebox{.8}{
+\begin{tikzpicture}[stategraph]
+  \node (000) {$\RRBetat{a_0,b_0,z_0}$};
+  \node[right of=000] (001) {$\RRBetat{a_0,b_0,z_1}$};
+  \node[right of=001] (002) {$\RRBetat{a_0,b_0,z_2}$};
+  
+  \node[below of=000, node distance=1.7cm] (100) {$\RRBetat{a_1,b_0,z_0}$};
+  \node[right of=100] (101) {$\RRBetat{a_1,b_0,z_1}$};
+  \node[right of=101] (102) {$\RRBetat{a_1,b_0,z_2}$};
+  
+  \node[at=(000), yshift=-.8cm, xshift=1.6cm] (010) {$\RRBetat{a_0,b_1,z_0}$};
+  \node[right of=010] (011) {$\RRBetat{a_0,b_1,z_1}$};
+  \node[right of=011] (012) {$\RRBetat{a_0,b_1,z_2}$};
+  
+  \node[at=(010), yshift=-1.7cm] (110) {$\RRBetat{a_1,b_1,z_0}$};
+  \node[right of=110] (111) {$\RRBetat{a_1,b_1,z_1}$};
+  \node[right of=111] (112) {$\RRBetat{a_1,b_1,z_2}$};
+  
+  \path
+    (000) edge (100) edge (010)
+    (001) edge (000) edge (101) edge (011)
+    (002) edge (102) edge (012) edge (001)
+    (010) edge (011)
+  % (011)
+    (012) edge (011)
+    (100) edge (101)
+  % (101)
+    (102) edge (101)
+    (110) edge (010) edge (111)
+    (111) edge (011) edge (112)
+    (112) edge (012)
+  ;
+\end{tikzpicture}
+}
+\end{center}
+\f Taille \tval{exponentielle} dans le nombre de composants
 
-Graphe des états: $\SGadn = (\Fadn, \Eadn)$, calculé d'après les fonctions d'évolution $f^a$\\
-et selon une dynamique asynchrone et unitaire :\\
-$$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \forall b \neq a, y^b = x^b$$
-
-\pause
-\medskip
-Taille du graphe des états: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$
-
-\medskip
-\f \tval{Exponentielle} dans le nombre $|N|$ de composants
+% Graphe des états: $\SGadn = (\Fadn, \Eadn)$, calculé d'après les fonctions d'évolution $f^a$\\
+% et selon une dynamique asynchrone et unitaire :\\
+% $$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \forall b \neq a, y^b = x^b$$
+% 
+% \pause
+% \medskip
+% Taille du graphe des états: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$
+% 
+% \medskip
+% \f \tval{Exponentielle} dans le nombre $|N|$ de composants
 
 \pause
 \bigskip

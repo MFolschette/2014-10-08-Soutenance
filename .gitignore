@@ -13,3 +13,6 @@
 *.kilepr
 *.nav
 *.snm
+*.fls
+*.fdb_latexmk
+
