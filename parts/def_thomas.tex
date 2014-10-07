@@ -86,18 +86,21 @@
 \begin{frame}[c]
   \frametitle{Analyse des modèles de Thomas}
 
+% \centering
+% \begin{tikzpicture}[stategraph]
+%   \node (000) {$\RRBetat{a_0,b_0,z_0}$};
+%   \node[right of=000] (001) {$\RRBetat{a_0,b_0,z_1}$};
+%   \node[right of=001] (002) {$\RRBetat{a_0,b_0,z_2}$};
+%   
+%   \node[below of=000] (100) {$\RRBetat{a_1,b_0,z_0}$};
+% \end{tikzpicture}
+
 Graphe des états: $\SGadn = (\Fadn, \Eadn)$, calculé d'après les fonctions d'évolution $f^a$\\
 et selon une dynamique asynchrone et unitaire :\\
-%selon les fonctions d'évolution $f^a$ :
 $$(x, y) \in \Eadn \Longleftrightarrow \exists a \in N, y^a = f^a(x) \wedge \forall b \neq a, y^b = x^b$$
-
-%\f Only one component at a time $a$ evolves to reach the value of its evolution function $f^a(x)$
 
 \pause
 \medskip
-%\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcc}
-%  Size of the State Graph: & $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$ &
-%\end{tabular*}
 Taille du graphe des états: \quad $\displaystyle|\Fadn| = \prod_{a \in N} |\Fadn^a| \quad\geq 2^{|N|}$
 
 \medskip
